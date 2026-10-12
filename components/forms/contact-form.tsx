@@ -34,11 +34,34 @@ export function ContactForm() {
 
   const fields = contactFormCopy.fields;
 
-  async function onSubmit() {
-    // Stubbed submit handler — swap for a real API route (email/Sanity) later.
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    toast.success(contactFormCopy.successMessage);
-    reset();
+  async function onSubmit(values: ContactFormValues) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+  
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Failed to send your enquiry."
+        );
+      }
+  
+      toast.success(contactFormCopy.successMessage);
+      reset();
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+  
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Failed to send your enquiry. Please try again."
+      );
+    }
   }
 
   return (

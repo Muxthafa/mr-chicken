@@ -11,7 +11,7 @@ export const contactFormCopy = {
   fields: {
     name: { label: "Full Name", placeholder: "Your name" },
     email: { label: "Email", placeholder: "you@example.com" },
-    phone: { label: "Phone Number", placeholder: "+91 98765 43210" },
+    phone: { label: "Phone Number", placeholder: "Your number" },
     subject: { label: "I'm Interested In", placeholder: "Select an option" },
     message: { label: "Message", placeholder: "Tell us a bit about what you need..." },
   },
