@@ -1,36 +1,35 @@
 @import "tailwindcss";
 
 /*
- * Brand tokens — the entire site reads color/type through these variables.
- * Swapping the palette or font later means editing only this block.
+ * Brand tokens — maroon & cream palette aligned with MR packaging.
  */
 :root {
-  --background: #ffffff;
-  --foreground: #0a0908;
+  --background: #fdf9f6;
+  --foreground: #1a1210;
 
-  --primary: #28666e;
+  --primary: #70161e;
   --primary-foreground: #ffffff;
 
-  --secondary: #a3b4a2;
-  --secondary-foreground: #0a0908;
+  --secondary: #c9a88a;
+  --secondary-foreground: #1a1210;
 
-  --muted: #f2f4f1;
-  --muted-foreground: #5b6b58;
+  --muted: #f5efe8;
+  --muted-foreground: #5c4a42;
 
-  --accent: #eaf2f1;
-  --accent-foreground: #1c4a50;
+  --accent: #f0e4dc;
+  --accent-foreground: #70161e;
 
-  --destructive: #dc2626;
+  --destructive: #b91c1c;
   --destructive-foreground: #ffffff;
 
-  --border: #e3e8e1;
-  --input: #e3e8e1;
-  --ring: #28666e;
+  --border: #e8ddd4;
+  --input: #e8ddd4;
+  --ring: #70161e;
 
-  --card: #ffffff;
-  --card-foreground: #0a0908;
-  --popover: #ffffff;
-  --popover-foreground: #0a0908;
+  --card: #fffcf9;
+  --card-foreground: #1a1210;
+  --popover: #fffcf9;
+  --popover-foreground: #1a1210;
 
   --radius: 0.625rem;
 }

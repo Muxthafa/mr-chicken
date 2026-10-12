@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { Container } from "@/components/shared/container";
 import { navLinks } from "@/data/nav";
-import { company } from "@/data/company";
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -25,12 +25,10 @@ export function Navbar() {
       <Container className="flex h-16 items-center justify-between md:h-20">
         <Link
           href="/"
-          className="flex items-center gap-2.5 text-base font-semibold tracking-tight text-foreground"
+          aria-label="MR Mutton and Chicken — Home"
+          className="shrink-0 rounded-sm outline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
         >
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-            MR
-          </span>
-          <span className="hidden sm:inline">{company.name}</span>
+          <BrandLogo decorative priority className="text-primary" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
@@ -68,7 +66,8 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="flex w-4/5 flex-col p-0">
             <SheetHeader className="border-b border-border px-6 py-5">
-              <SheetTitle>{company.name}</SheetTitle>
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <BrandLogo decorative priority className="text-primary" />
             </SheetHeader>
             <nav className="flex flex-1 flex-col gap-1 px-4 py-4" aria-label="Mobile">
               {navLinks.map((link) => (

@@ -5,6 +5,10 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = `${company.name} — Fresh Chicken & Mutton, Katpadi`;
 
+const maroon = "#70161E";
+const cream = "#FDF9F6";
+const ink = "#1A1210";
+
 export default async function OpengraphImage() {
   return new ImageResponse(
     (
@@ -16,40 +20,55 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: cream,
           backgroundImage:
-            "radial-gradient(circle at 85% 20%, rgba(40,102,110,0.12), transparent 55%), radial-gradient(circle at 10% 90%, rgba(163,180,162,0.25), transparent 50%)",
+            "radial-gradient(circle at 85% 20%, rgba(112,22,30,0.08), transparent 55%), radial-gradient(circle at 10% 90%, rgba(201,168,138,0.35), transparent 50%)",
         }}
       >
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 72,
-            height: 72,
-            borderRadius: 18,
-            backgroundColor: "#28666E",
-            color: "#FFFFFF",
-            fontSize: 30,
-            fontWeight: 700,
-            marginBottom: 40,
+            flexDirection: "column",
+            marginBottom: 36,
           }}
         >
-          MR
+          <div
+            style={{
+              fontSize: 72,
+              fontWeight: 700,
+              color: maroon,
+              fontFamily: "Georgia, serif",
+              letterSpacing: "-0.04em",
+              lineHeight: 1,
+            }}
+          >
+            MR
+          </div>
+          <div
+            style={{
+              marginTop: 8,
+              fontSize: 18,
+              fontWeight: 600,
+              letterSpacing: "0.24em",
+              textTransform: "uppercase",
+              color: ink,
+            }}
+          >
+            Mutton and Chicken
+          </div>
         </div>
         <div
           style={{
-            fontSize: 60,
+            fontSize: 52,
             fontWeight: 700,
-            color: "#0A0908",
-            lineHeight: 1.1,
+            color: ink,
+            lineHeight: 1.15,
             maxWidth: 900,
           }}
         >
           {company.name}
         </div>
-        <div style={{ fontSize: 30, color: "#28666E", marginTop: 20, fontWeight: 600 }}>
+        <div style={{ fontSize: 28, color: maroon, marginTop: 20, fontWeight: 600 }}>
           {company.tagline}
         </div>
       </div>

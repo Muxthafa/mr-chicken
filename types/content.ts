@@ -85,6 +85,7 @@ export interface CompanyInfo {
     city: string;
     state: string;
     country: string;
+    pincode: string;
   };
   mapEmbedUrl: string;
   workingHours: WorkingHoursEntry[];

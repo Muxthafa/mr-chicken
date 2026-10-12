@@ -3,23 +3,25 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import { Container } from "@/components/shared/container";
 import { Separator } from "@/components/ui/separator";
 import { SocialIcon } from "@/components/shared/social-icon";
+import { BrandLogo } from "@/components/brand/brand-logo";
 import { company } from "@/data/company";
 import { footerDescription, footerLinkGroups } from "@/data/footer";
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const fullAddress = `${company.address.line1}, ${company.address.locality}, ${company.address.city}, ${company.address.state}, ${company.address.country}`;
+  const fullAddress = `${company.address.line1}, ${company.address.locality}, ${company.address.city}, ${company.address.state}, ${company.address.country}, ${company.address.pincode}`;
 
   return (
     <footer className="border-t border-border bg-background">
       <Container className="py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 text-base font-semibold text-foreground">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-                MR
-              </span>
-              <span>{company.name}</span>
+            <Link
+              href="/"
+              aria-label="MR Mutton and Chicken — Home"
+              className="inline-block rounded-sm outline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
+            >
+              <BrandLogo decorative className="text-primary" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               {footerDescription}
